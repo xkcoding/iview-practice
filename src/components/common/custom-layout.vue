@@ -86,9 +86,7 @@
       </Sider>
       <Content class="content" :class="{'content-expand':isCollapsed}">
         <slot name="breadcrumb"></slot>
-        <Card>
-          <slot></slot>
-        </Card>
+        <slot name="content"></slot>
       </Content>
     </Layout>
     <Drawer title="选择配色" v-model="openTheme" :closable="false">

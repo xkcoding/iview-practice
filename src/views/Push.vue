@@ -1,6 +1,10 @@
 <template>
   <custom-layout>
-    这是推送营销页面
+    <div slot="content">
+      <Card>
+        这是推送营销页面
+      </Card>
+    </div>
   </custom-layout>
 </template>
 

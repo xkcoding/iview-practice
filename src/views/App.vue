@@ -7,7 +7,11 @@
         <BreadcrumbItem>Shiny</BreadcrumbItem>
       </Breadcrumb>
     </div>
-    这是应用管理页面
+    <div slot="content">
+      <Card>
+        这是应用管理页面
+      </Card>
+    </div>
   </custom-layout>
 </template>
 

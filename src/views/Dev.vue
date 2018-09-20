@@ -1,6 +1,10 @@
 <template>
   <custom-layout>
-    这是开发助手页面
+    <div slot="content">
+      <Card>
+        这是开发助手页面
+      </Card>
+    </div>
   </custom-layout>
 </template>
 
