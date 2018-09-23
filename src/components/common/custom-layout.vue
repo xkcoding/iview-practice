@@ -6,6 +6,7 @@
           <img src="../../assets/images/logo.png" alt="logo" class="logo">
         </i-col>
         <i-col span="14">
+          <Icon type="md-menu" />
           <Menu mode="horizontal" :active-name="activeName">
             <menu-item name="/app" to="/app">
               应用分析
