@@ -2,11 +2,13 @@
   <Layout>
     <Header class="header">
       <Row>
-        <i-col span="4" offset="1">
+        <i-col span="3" offset="1">
           <img src="../../assets/images/logo.png" alt="logo" class="logo">
         </i-col>
-        <i-col span="14">
-          <Icon type="md-menu" />
+        <i-col span="1">
+          <Icon :class="triggerClasses" @click.native="handleCollapsed" type="md-menu" :size="32"/>
+        </i-col>
+        <i-col span="15">
           <Menu mode="horizontal" :active-name="activeName">
             <menu-item name="/app" to="/app">
               应用分析
@@ -69,7 +71,8 @@
       </Row>
     </Header>
     <Layout>
-      <Sider width="240" collapsible v-model="isCollapsed" class="sider" :class="{ 'sider-hider':isCollapsed }">
+      <Sider width="240" hide-trigger collapsible v-model="isCollapsed" class="sider"
+             :class="{ 'sider-hider':isCollapsed }">
         <Menu theme="dark" active-name="option2">
           <menu-item name="option1">
             <Icon type="ios-search"></Icon>
@@ -107,8 +110,19 @@
         isCollapsed: false
       };
     },
-    computed: {},
-    methods: {},
+    computed: {
+      triggerClasses() {
+        return [
+          'trigger-icon',
+          this.isCollapsed ? 'rotate' : ''
+        ]
+      }
+    },
+    methods: {
+      handleCollapsed() {
+        this.isCollapsed = !this.isCollapsed;
+      }
+    },
     created() {
       this.activeName = this.$route.path;
     }
@@ -128,6 +142,14 @@
     .logo {
       height: 50px;
       margin-top: 5px
+    }
+    .trigger-icon {
+      cursor: pointer;
+      transition: transform .3s ease;
+      &.rotate {
+        transform: rotateZ(90deg);
+        transition: transform .3s ease;
+      }
     }
   }
 
