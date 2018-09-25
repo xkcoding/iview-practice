@@ -12,7 +12,7 @@ module.exports = {
       .set("api", resolve("src/api"))
       .set("components", resolve("src/components"))
       .set("config", resolve("src/config"))
-      .set("lib", resolve("src/lib"))
+      .set("libs", resolve("src/libs"))
       .set("views", resolve("src/views"));
   },
   // 打包时不生成.map文件
