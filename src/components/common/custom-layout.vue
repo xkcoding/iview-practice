@@ -73,7 +73,8 @@
     <Layout>
       <Sider width="240" hide-trigger collapsible v-model="isCollapsed" class="sider"
              :class="{ 'sider-hider':isCollapsed }">
-        <Menu theme="dark" active-name="option2">
+        <Menu theme="dark" :open-names="[this.$route.path.indexOf('table') !== -1 ? 'table' : '']"
+              :active-name="activeName">
           <menu-item name="option1">
             <Icon type="ios-search"></Icon>
             <span>Option 1</span>
@@ -86,6 +87,16 @@
             <Icon type="ios-bookmark"></Icon>
             <span>Option 3</span>
           </menu-item>
+          <Submenu name="table">
+            <template slot="title">
+              <Icon type="md-grid"/>
+              <span>Table系列</span>
+            </template>
+            <menu-item name="/table1" to="/table1">
+              <Icon type="md-grid"/>
+              <span>Table1</span>
+            </menu-item>
+          </Submenu>
         </Menu>
       </Sider>
       <Content class="content" :class="{'content-expand':isCollapsed}">

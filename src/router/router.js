@@ -42,6 +42,14 @@ export default [
       title: "仪表盘"
     },
     component: () => import("views/Dashboard.vue")
+  },
+  {
+    path: "/table1",
+    name: "table1",
+    meta: {
+      title: "表格1"
+    },
+    component: () => import("views/Table1.vue")
   }, {
     path: "*",
     name: "page_not_found",
